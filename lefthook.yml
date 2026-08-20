@@ -1,5 +1,0 @@
-pre-commit:
-  commands:
-    sync-postman-spec:
-      glob: "openapi.yml"
-      run: bash scripts/sync-postman.sh
