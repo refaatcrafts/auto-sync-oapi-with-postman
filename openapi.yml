@@ -8,6 +8,36 @@ servers:
   - url: https://api.example.com
 
 paths:
+  /checkout:
+    post:
+      summary: Checkout
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                productId:
+                  type: string
+                  example: prod_123
+                quantity:
+                  type: integer
+                  example: 2
+      responses:
+        '200':
+          description: Checkout successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  orderId:
+                    type: string
+                    example: order_123
+                  status:
+                    type: string
+                    example: confirmed
   /products:
     get:
       summary: List products
